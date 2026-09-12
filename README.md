@@ -526,3 +526,7 @@ prices = [7, 6, 4, 3, 1]   # strictly decreasing → no profit possible
 best_time_optimized(prices)  # → 0
 ```
 This is the classic edge case: if prices only go down, `max_profit` correctly stays at `0` because every `prices[i] - min_price` comparison ends up `≤ 0`, and `max()` never lets `max_profit` go negative.
+
+
+## The Asci code : 
+ord() converts a character into its underlying numeric code point (ASCII/Unicode value). It's useful whenever you need to work with characters as numbers instead of symbols. Common reasons
