@@ -31,10 +31,32 @@ def string_score_2(s):
 
 
 l="hello"
-print(string_score_2(l))
+print(string_score_2(l),"\n")
+print(chr(65))  #it return A  : 
+print(ord(' ')) # it return 32 : 
+print(chr(36),"\n")  # $
 
 
+char='Z'
+print(chr(ord(char)+32))  # transform into the lower format !! 
 
 
+s="YOOUSSEF"
+print(s.lower(),"\n") 
+print(s.lower()[::-1],"\n") # give the backwords of s
+h="youssef"
+print(h.upper(),"\n") # the opposite function of lower()
+# Check if plandrome 
+# a plandrome is a string that reads the same forwards and backwards !!
+
+
+def is_plandrome(s):
+    lowerd=s.lower() # lower create a new string  , that contain only the lower version of each charachter 
+    return lowerd==lowerd[::-1]
+
+s = "Racecar"
+# s[0]="S" !! --> 'str' object does not support item assignment
+print(is_plandrome(s)) # return True regadless of the format of characters in s , lower or upper
+# for time complexity  
 
 
