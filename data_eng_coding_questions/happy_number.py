@@ -22,20 +22,33 @@ print("\n")
 def sequare_digit(n):
     sequare_digit=0
     while n!=0:
-        sequare_digit+=(n%10)**2
-        n=n//10
+        digit=n%10
+        sequare_digit+=digit**2
+        n=n//10 # to explore the other digit
     return sequare_digit
 print(sequare_digit(12))  # this will return 2**2+1=5
 
-# the first solution using a  hash set : 
+# the first solution using a  hash set   : 
 # the intuition is to detect a  cycle , if a sequare  sum of dgit is already in the set and it's not equal to 1,then it's not a happy number
 
 def happy_number(n):
     hash_set=set()
-    if n==1:return True
-    else:
-        while n not in hash_set:
-            hash_set.add(n)
-            n=sequare_digit(n) 
-        return False
-print(happy_number(19))
+    if n==1:return True # if n==1  this is a base case , we don't need  the while loop 
+    while n not in hash_set:
+        hash_set.add(n)
+        n=sequare_digit(n) 
+        if n==1:return True
+    return False
+print(happy_number(2))
+
+
+# the more optimal way is using the tow pointes aproach : 
+
+def happy_number_1(n):
+    slow,fast=n,sequare_digit(n)
+    while slow!=fast:
+        slow=sequare_digit(slow)
+        fast=sequare_digit(sequare_digit(fast))
+    return slow==1
+
+print(happy_number_1(19))
