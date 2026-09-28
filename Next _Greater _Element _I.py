@@ -1,5 +1,6 @@
 # let's implement the next greater element in a array , using a monotonic stack : 
-
+# this solution provide an O(n) time complexity , but it create to  exta memory , a stack and a list 
+# this mean that the space complexity is O(n)(list)+O(n)(stack)
 
 def nge(nums):
     n = len(nums)
@@ -15,7 +16,7 @@ def nge(nums):
         stack.append(nums[i])    # push current element for future comparisons
     return res
 
-print(nge([4, 5, 2, 25]))
+print(nge([1,3,4,2]))  #---> return:[3, 4, -1, -1]
 
 
 # The next greater element of some element x in an array is the first greater element that is to the right of x in the same array.
