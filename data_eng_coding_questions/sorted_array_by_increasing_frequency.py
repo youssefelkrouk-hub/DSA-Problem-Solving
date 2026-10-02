@@ -48,7 +48,7 @@ def sorting_array(nums):
         return (counts[n],-n)
     return sorted(nums,key=extract_value)
 
-print(sorting_array([2,3,1,3,2]))
+print(sorting_array([2,3,4,3,2])) 
 
 
     
