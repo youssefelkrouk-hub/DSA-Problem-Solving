@@ -32,3 +32,4 @@ while curr:
     print(curr.val, end=" -> ")
     curr = curr.next
 print("None")
+
