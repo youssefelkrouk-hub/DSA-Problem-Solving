@@ -21,7 +21,7 @@ print("more optimized solution without extra memory :")
 def fibo(n):
     a,b=1,1
     for i in range(n-1):
-        a,b=a,a+b
+        a,b=a,a+b 
     return b 
 
 print(fibo(5))
