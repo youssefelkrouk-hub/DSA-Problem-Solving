@@ -10,10 +10,24 @@ def fibonacci(n):
         fibo[i]=fibo[i-2]+fibo[i-1]
     return fibo[n]
 
-print(fibonacci(4))
+print(fibonacci(5))
 
 # but time complexity is : O(n)
 # space complexity is : O(n) i use an extra memory which is an array 
+
+print("Top down solution using caching !! :")
+def top_down_fibo(n,memo=None):
+    if memo==None:
+        memo={}
+    if n in memo:
+        return memo[n]
+    if n<=1:
+        return 1
+    left=top_down_fibo(n-1,memo)
+    right=top_down_fibo(n-2,memo)
+    memo[n]=left+right
+    return memo[n]
+print(top_down_fibo(5))
 
 # more optimized solution without extra memory ::
 print("\n")
@@ -21,7 +35,7 @@ print("more optimized solution without extra memory :")
 def fibo(n):
     a,b=1,1
     for i in range(n-1):
-        a,b=a,a+b 
+        a,b=b,a+b 
     return b 
 
 print(fibo(5))
