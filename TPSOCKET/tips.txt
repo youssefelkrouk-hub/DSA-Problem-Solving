@@ -1,0 +1,3 @@
+il s'agit bien d'un connection synchrone , puis que les deux server client doivent se connecter pour assuer la communication 
+aussi le client ne peut pas envoyer un message si le server n'est pas activer 
+-- TCP oblige que les deux doivent etre lancé 
